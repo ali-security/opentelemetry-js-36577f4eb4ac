@@ -1,8 +1,7 @@
 name: Benchmark Tests
 
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   benchmark-tests:
@@ -11,8 +10,8 @@ jobs:
       matrix:
         node_version:
           - "22"
-    runs-on: self-hosted
-    timeout-minutes: 10
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       NPM_CONFIG_UNSAFE_PERM: true
     steps:
